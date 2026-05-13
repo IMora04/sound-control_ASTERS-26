@@ -1,0 +1,29 @@
+[Unit]
+Description=Servicio de Audio en Segundo Plano
+After=sound.target multi-user.target network-online.target
+Wants=sound.target network-online.target
+
+[Service]
+WorkingDirectory=/home/pi/Desktop
+
+# Descargar el archivo sound.py desde GitHub antes de iniciar
+ExecStartPre=/usr/bin/curl -L \
+https://raw.githubusercontent.com/IMora04/sound-control_ASTERS-26/main/sound.py \
+-o /home/pi/Desktop/sound.py
+
+# Espera para asegurar red/audio
+ExecStartPre=/bin/sleep 5
+
+# Ejecutar el script descargado
+ExecStart=/usr/bin/python3 /home/pi/Desktop/sound.py
+
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+# Entorno para PulseAudio/PipeWire
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+
+[Install]
+WantedBy=multi-user.target
