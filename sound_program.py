@@ -4,7 +4,7 @@ import struct
 import pyaudio
 
 # --- CONFIGURACIÓN ---
-FRECUENCIA = 220       # Frecuencia en Hz (Nota LA)
+FRECUENCIA = 440       # Frecuencia en Hz (Nota LA)
 PORCENTAJE_VOLUMEN = 30  # Variable de volumen: define el porcentaje (0 a 100)
 RATE = 44100            # Tasa de muestreo (Calidad de CD)
 CHANNELS = 2            # CONFIGURACIÓN MANDATORIA: 2 Canales para Estéreo
