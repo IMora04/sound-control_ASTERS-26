@@ -5,10 +5,10 @@ import pyaudio
 
 # --- CONFIGURACIÓN ---
 FRECUENCIA = 440       # Frecuencia en Hz (Nota LA)
-PORCENTAJE_VOLUMEN = 80  # Variable de volumen: define el porcentaje (0 a 100)
+PORCENTAJE_VOLUMEN = 30  # Variable de volumen: define el porcentaje (0 a 100)
 RATE = 44100            # Tasa de muestreo (Calidad de CD)
 CHANNELS = 2            # CONFIGURACIÓN MANDATORIA: 2 Canales para Estéreo
-INTERVALO = 3.0         # Tiempo en segundos para alternar de lado
+INTERVALO = 1.0        # Tiempo en segundos para alternar de lado
 
 # Conversión del porcentaje a factor de amplitud (rango de 0.0 a 1.0)
 volumen_clamped = max(0, min(100, PORCENTAJE_VOLUMEN))
