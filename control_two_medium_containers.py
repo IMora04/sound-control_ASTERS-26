@@ -53,7 +53,7 @@ CHUNK      = 1024
 # ─────────────────────────────────────────────
 
 
-def pick_tone(channel_config: dict) -> tuple[float, float]:
+def pick_tone(channel_config: dict) -> tuple:
     """Devuelve (frecuencia, amplitud) aleatorios del canal dado."""
     freq = random.choice(list(channel_config.keys()))
     vol_min, vol_max = channel_config[freq]
